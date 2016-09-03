@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from tasklist.models import PatentItem 
+
 # Create your views here.
 
 def upload(request):
-    return HttpResponse("<html><body>This is to upload of tasklist.</body></html>")
+    return render(request, 'upload.html')
 
 def show(request):
-    return HttpResponse("<html><body>This is show of tasklist.</body></html>")
+    patents = PatentItem.objects.all().order_by('appDate')[:10]
+    return render(request, 'show.html', {'records' : patents})

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+<h2>审查完成信息：</h2>
+<p>最近的记录：</p>
+
+<table border = "1">
+<tr>
+    <th>申请号</th>
+    <th>IPC</th>
+    <th>平衡因子</th>
+    <th>发明名称</th>
+    <th>申请人</th>
+    <th>国家</th>
+    <th>申请日</th>
+    <th>申查员姓名</th>
+    <th>一通检索结果</th>
+    <th>一通审查结论</th>
+    <th>一通预测</th>
+    <th>一通日期</th>
+    <th>一通意见陈述</th>
+</tr>
+{% for item in records %}
+<tr>
+    <td>{{item.appNO}}</td>
+    <td>{{item.appIPC}}</td>
+    <td>{{item.appTaskRatio}}</td>
+    <td>{{item.appName}}</td>
+    <td>{{item.appApplicant}}</td>
+    <td>{{item.appNation}}</td>
+    <td>{{item.appDate}}</td>
+    <td>{{item.theExaminer.nameZh}}</td>
+    <td>{{item.firstActionSearch}}</td>
+    <td>{{item.firstActionExaminate}}</td>
+    <td>{{item.firstActionForecast}}</td>
+    <td>{{item.firstActionDate}}</td>
+    <td>{{item.firstActionReply}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{%endblock %}
