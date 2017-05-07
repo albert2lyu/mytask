@@ -17,20 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from views import home
-from examinatetips import urls as examinatetips_urls
+# from examinatetips import urls as examinatetips_urls
+# from examiner_auth import urls as ea_urls
 # from tasklist import urls as tasklist_urls
 
-
-# use xadmin
-#import xadmin
-#xadmin.autodiscover()
-#from xadmin.plugins import xversion
-#xversion.registe_models()
-
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    #url(r'^xadmin', include(xadmin.site.urls), name = 'xadmin'),
+    url(r'^admin/', include(admin.site.urls), name = "admin"),
+    url(r'^accounts/', include('examiner_auth.urls'), name = 'accounts'),
     url(r'^$', home, name = "home"),
-    url(r'^examinatetips/', include(examinatetips_urls)),
+    url(r'^examinatetips/', include('examinatetips.urls'), name = 'examinatetips'),
     # url(r'^tasklist/', include(tasklist_urls)),
 ]

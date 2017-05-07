@@ -43,9 +43,6 @@ INSTALLED_APPS = (
     #'crispy_forms',
     
     
-    # use django-bootstrap_toolkit
-    #'bootstrap_toolkit',
-
     # 'tasklist',
     'examiner_auth',
     'examinatetips',

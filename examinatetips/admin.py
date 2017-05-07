@@ -13,7 +13,7 @@ admin.site.register(TipCategory, TipCategoryAdmin)
 
 class ExaminateTipAdmin(admin.ModelAdmin):
 	fields = ['tipCategory', 'tipContent', \
-			'theExaminer', 'submitTime']
+			'theExaminer']
 	list_display = ('tipCategory', 'tipContent', 'theExaminer')
 	
 admin.site.register(ExaminateTip, ExaminateTipAdmin)	
