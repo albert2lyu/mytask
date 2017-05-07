@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table table-bordered table-responsive">
+    <p><h2>审查经验：</h2></p>
+    <table class="table">
+        {% for tip in tips %}
+        <tr>
+            <td>{{tip.tipContent}}</td>
+            <td>{{tip.tipCategory.categoryName}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+
+

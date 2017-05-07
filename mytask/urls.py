@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from mytask import views
+from views import home
 from examinatetips import urls as examinatetips_urls
-from tasklist import urls as tasklist_urls
+# from tasklist import urls as tasklist_urls
 
 
 # use xadmin
@@ -30,7 +30,7 @@ from tasklist import urls as tasklist_urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^xadmin', include(xadmin.site.urls), name = 'xadmin'),
-    url(r'^$', views.home, name = "home"),
+    url(r'^$', home, name = "home"),
     url(r'^examinatetips/', include(examinatetips_urls)),
-    url(r'^tasklist/', include(tasklist_urls)),
+    # url(r'^tasklist/', include(tasklist_urls)),
 ]

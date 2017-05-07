@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     # use django-bootstrap_toolkit
     #'bootstrap_toolkit',
 
-    'tasklist',
+    # 'tasklist',
     'examiner_auth',
     'examinatetips',
 )
@@ -99,7 +99,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -112,3 +112,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, "./static/"))

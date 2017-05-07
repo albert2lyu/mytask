@@ -21,10 +21,10 @@ class TipCategory(models.Model):
 		
 
 class ExaminateTip(models.Model):
-	tipCategory = models.ForeignKey(TipCategory)
+	tipCategory = models.ForeignKey(TipCategory, null = True)
 	tipContent = models.TextField(u'内容', max_length = 500, default = u'无')
 	theExaminer = models.ForeignKey(User, null = True)
-	submitTime = models.DateTimeField(u'提交时间', default = timezone.now())
+	submitTime = models.DateTimeField(u'提交时间', auto_now = True)
 	
 	class Meta:
 		verbose_name = u'审查原则及技巧'

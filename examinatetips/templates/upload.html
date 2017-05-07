@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+<div = "col-md-4">
+
+{% block content %}
+   <form class="form-horizontal" method="POST" action = "/examinatetips/upload/">
+    <div class="form-group" >
+        <label for="inputItem" class="col-sm-2 control-label">类型：</label>
+        <div class="col-sm-10">
+<input class="form-control input-lg" id="tipCategory" name="tipCategory" placeholder="请输入审查类型……"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputList" class="col-sm-2 control-label">审查建议：</label>
+        <div class="col-sm-10">
+<input class="form-control input-lg" id="tipContent" name="tipContent" placeholder="请输入审查经验……"/>
+        </div>
+    </div>
+{% csrf_token %}
+{% if error %}
+    <div class = "form-group has-error">
+        <span class = "help-block">{{error}}</span>
+    </div>
+{% endif %}
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-lg btn-primary">提交</button>
+    </div>
+</div>
+            
+            
+
+</form>
+
+
+<p>同一类别中的其他建议：</p>
+
+<ul class="list-group">
+    {% for tip in tips %}
+    <li class="list-group.item">{{tip.tipContent}}</li>
+    {% endfor %}
+</ul>
+</div>
+    
+{% endblock %}
