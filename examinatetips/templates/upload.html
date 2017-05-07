@@ -32,14 +32,26 @@
 
 </form>
 
+<div class="container">
 
+<div class="col-md-4">
 <p>同一类别中的其他建议：</p>
-
 <ul class="list-group">
     {% for tip in tips %}
     <li class="list-group.item">{{tip.tipContent}}</li>
     {% endfor %}
 </ul>
+
+</div>
+
+<div class="col-md-4">
+    <p>您提交的其他建议：</p>
+    <ul class="list-group">
+    {% for tip in yourtips %}
+    <li class="list-group.item">{{tip.tipContent}}</li>
+    {% endfor %}
+</ul>
+</div>
 </div>
     
 {% endblock %}

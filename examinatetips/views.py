@@ -14,9 +14,11 @@ def upload(request):
     else : 
         tip = ExaminateTip.objects.get_or_create(tipCategory = tipCtgr[0], \
             tipContent = request.POST.get('tipContent', False), \
-            theExaminer = request.user)    
+            theExaminer = request.user)  
+        yourtips = ExaminateTip.objects.filter(theExaminer = request.user)  
         return render(request, 'upload.html', { \
             'tips' : ExaminateTip.objects.filter(tipCategory = tipCtgr[0]), \
+            'yourtips' : yourtips, \
             'user' : request.user})
 
 
