@@ -41,9 +41,11 @@ INSTALLED_APPS = (
     # use django-xadmin
     #'xadmin',
     #'crispy_forms',
+
+    'import_export',
     
     
-    # 'tasklist',
+    'tasklist',
     'examiner_auth',
     'examinatetips',
 )

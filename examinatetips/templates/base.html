@@ -33,11 +33,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-              {% if user.is_authenticated %}
-              <li>欢迎你，{{user.username}}。<a href="/accounts/logout/">退出</a></li>
-              {% else %}
-              <li>请<a href="/accounts/login/">登录。</a></li>
-              {% endif %}
+              <li>{% if user.is_authenticated %}欢迎你，{{user.username}}。<a href="/accounts/logout/">退出</a>{% else %}请<a href="/accounts/login/">登录。</a>{% endif %}</li>
         <li>{% now "Y-m-d" %}</li>
         <li>{% now "H:i:s" %}</li>        
       </ul>
