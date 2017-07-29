@@ -43,4 +43,5 @@ class PatentItemAdmin(ImportExportModelAdmin):
 
 	resource_class = PatentItemResource
 	
+	
 admin.site.register(PatentItem, PatentItemAdmin)

@@ -33,10 +33,10 @@ def upload(request):
             return HttpResponseRedirect('/examinatetips/show')
     else :
         update_form = ExaminateTipForm
-    return render(request, 'upload.html', {'update_form': update_form})
+    return render(request, 'upload_tips.html', {'update_form': update_form, 'user': request.user})
 
 
 def show(request):
     tips = ExaminateTip.objects.all()
-    return render(request, 'show.html', {'tips': tips})
+    return render(request, 'show_tips.html', {'tips': tips})
 

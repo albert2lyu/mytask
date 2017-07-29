@@ -15,7 +15,7 @@ from .models import TipCategory, ExaminateTip
 class ExaminateTipAdmin(admin.ModelAdmin):
 	fields = ['tipCategory', 'tipContent', \
 			'theExaminer']
-	list_display = ('tipCategory', 'tipContent', 'theExaminer')
+	list_display = ('tipCategory', 'tipContent', 'theExaminer', 'submitTime')
 	
 admin.site.register(ExaminateTip, ExaminateTipAdmin)
 

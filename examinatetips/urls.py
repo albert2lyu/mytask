@@ -1,9 +1,8 @@
 from django.conf.urls import include, url
 
-from examinatetips import views
+from .views import upload, show
 
 urlpatterns = [
-    url(r'/', views.show, name = "show examination tips"),
-    url(r'upload/', views.upload, name ='upload'),
-    url(r'show/', views.show, name = "show examination tips"),
+    url(r'upload/', upload, name ='upload'),
+    url(r'show/', show, name = "show examination tips"),
 ]
