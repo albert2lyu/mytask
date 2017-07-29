@@ -19,12 +19,12 @@ from django.contrib import admin
 from views import home
 # from examinatetips import urls as examinatetips_urls
 # from examiner_auth import urls as ea_urls
-# from tasklist import urls as tasklist_urls
+from tasklist import urls as tasklist_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls), name = "admin"),
     url(r'^accounts/', include('examiner_auth.urls'), name = 'accounts'),
     url(r'^$', home, name = "home"),
     url(r'^examinatetips/', include('examinatetips.urls'), name = 'examinatetips'),
-    # url(r'^tasklist/', include(tasklist_urls)),
+    url(r'^tasklist/', include(tasklist_urls), name = "tasklist_urls"),
 ]

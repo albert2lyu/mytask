@@ -2,6 +2,11 @@
 
 {%block content %}
 
-<h2>This is website to upload your task!</h2>
+<div class="form from-table">
+    <form action="/tasklist/upload/" method="POST">
+    {% csrf_token %}
+    {{update_form.as_p}}
+    <input type="submit" value="提交">
+</div>
 
 {%endblock %}
