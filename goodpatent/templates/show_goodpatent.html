@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                有价值专利列表：
+                <ol>
+                    {% for item in gps %}
+                        <li>{{item.appNO}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col-md-9">
+                <h1>有价值专利：{{gp.appName}}</h1>
+                <h2>案件信息</h2>
+                <p>申请号：{{gp.appNO}}</p>
+                <p>发明名称：{{gp.appName}}</p>
+                <p>主分类号：{{gp.appIPC}}</p>
+                <p>推荐理由：{{gp.recReason}}</p>
+
+                <h2>案情介绍</h2>
+                <h3>发明解决的技术问题：</h3>
+                <p>{{gp.techProblem}}</p>
+                <h3>发明的主要技术方案：</h3>
+                <p>{{gp.techNovelty}}</p>
+                <h3>发明取得的技术效果：</h3>
+                <p>{{gp.techAdvantange}}</p>
+                <h3>主要权利要求：</h3>
+                <p>{{gp.claims}}</p>
+                <h3>发明构思：</h3>
+                <p>{{gp.concept}}</p>
+
+                <h2>价值分析</h2>
+                <h3>技术水平：</h3>
+                <p>{{gp.techLevel}}</p>
+                <h3>创新高度：</h3>
+                <p>{{gp.techHeight}}</p>
+                <h3>市场运用效果和社会影响：</h3>
+                <p>{{gp.market}}<p>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
