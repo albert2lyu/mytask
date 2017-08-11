@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'tasklist',
     'examiner_auth',
     'examinatetips',
+    'goodpatent',
 )
 
 MIDDLEWARE_CLASSES = (

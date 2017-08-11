@@ -15,7 +15,7 @@ class TipCategory(models.Model):
 		verbose_name_plural = u'审查涉及法条及问题的类型'
 		
 	def __str__(self):
-		return self.categoryName.encode('utf-8')
+		return self.categoryName #.encode('utf-8')
 	
 	
 		
